@@ -2,6 +2,10 @@
 $level_akses = "admin";
 include '../login_level/koneksi.php';
 include "../login_level/cek.php";
+if (!isset($_GET['nis'])) {
+  echo "NIS tidak valid!";
+  exit;
+}
 $nis = $_GET['nis'];
 $data = mysqli_query($conn, "SELECT * FROM tb_siswa WHERE nis='$nis'");
 $d = mysqli_fetch_array($data);
@@ -14,9 +18,9 @@ $d = mysqli_fetch_array($data);
 
   Kelas:
   <select name="kelas">
-    <option <?= $d['kelas'] == 'X' ? 'selected' : '' ?>>X</option>
-    <option <?= $d['kelas'] == 'XI' ? 'selected' : '' ?>>XI</option>
-    <option <?= $d['kelas'] == 'XII' ? 'selected' : '' ?>>XII</option>
+<option value="X" <?= $d['kelas'] == 'X' ? 'selected' : '' ?>>X</option>
+<option value="XI" <?= $d['kelas'] == 'XI' ? 'selected' : '' ?>>XI</option>
+<option value="XII" <?= $d['kelas'] == 'XII' ? 'selected' : '' ?>>XII</option>
   </select><br><br>
 
   Ekskul:

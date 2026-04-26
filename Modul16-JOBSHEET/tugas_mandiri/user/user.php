@@ -1,3 +1,5 @@
+<!DOCTYPE html>
+<html lang="id">
 <?php
 $level_akses = "user";
 include "../login_level/cek.php";
@@ -5,9 +7,6 @@ include "../login_level/cek.php";
 
 <h2>Dashboard Halaman User</h2>
 <p>Selamat datang, <?php echo $_SESSION['username']; ?></p>
-
-<!DOCTYPE html>
-<html lang="id">
 
 <head>
   <meta charset="UTF-8">
