@@ -8,7 +8,6 @@ $username = $_POST['username'];
 $level    = $_POST['level'];
 $password = $_POST['password'];
 
-// Cek username sudah dipakai user lain
 $cek = $conn->prepare("SELECT id FROM tb_user WHERE username=? AND id != ?");
 $cek->bind_param("si", $username, $id);
 $cek->execute();
@@ -20,7 +19,6 @@ if ($result_cek->num_rows > 0) {
     exit;
 }
 
-// Jika password diisi, update dengan hash baru. Jika kosong, tidak update password.
 if (!empty($password)) {
     $hash = password_hash($password, PASSWORD_DEFAULT);
     $stmt = $conn->prepare("UPDATE tb_user SET username=?, password=?, level=? WHERE id=?");

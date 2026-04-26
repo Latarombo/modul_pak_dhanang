@@ -8,9 +8,7 @@ if (!isset($_GET['id'])) {
     exit;
 }
 
-$id = $_GET['id'];
-
-// Cegah admin menghapus akunnya sendiri
+$id  = $_GET['id'];
 $cek = $conn->prepare("SELECT username FROM tb_user WHERE id=?");
 $cek->bind_param("i", $id);
 $cek->execute();

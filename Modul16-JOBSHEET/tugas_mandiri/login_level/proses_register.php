@@ -16,10 +16,8 @@ if (isset($_POST['submit'])) {
         echo "Username sudah digunakan!";
     } else {
         $hash = password_hash($password, PASSWORD_DEFAULT);
-
         $stmt = $conn->prepare("INSERT INTO tb_user (username, password, level) VALUES (?, ?, ?)");
         $stmt->bind_param("sss", $username, $hash, $level);
-
         if ($stmt->execute()) {
             echo "Register berhasil!";
         } else {

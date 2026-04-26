@@ -8,8 +8,7 @@ if (!isset($_GET['nis'])) {
     exit;
 }
 
-$nis = $_GET['nis'];
-
+$nis  = $_GET['nis'];
 $stmt = $conn->prepare("DELETE FROM tb_siswa WHERE nis=?");
 $stmt->bind_param("s", $nis);
 $stmt->execute();

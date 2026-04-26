@@ -9,16 +9,12 @@ $alamat = $_POST['alamat'];
 $kota   = $_POST['kota'];
 $jk     = $_POST['jk'];
 
-// Gabung tanggal
 $tgl = $_POST['tgl'];
 $bln = $_POST['bln'];
 $thn = $_POST['thn'];
 $ttl = $thn . "-" . $bln . "-" . $tgl;
 
-// Hobi
-$hobi = isset($_POST['hobi']) ? implode(",", $_POST['hobi']) : "";
-
-// Ekskul multiple
+$hobi   = isset($_POST['hobi'])   ? implode(",", $_POST['hobi'])   : "";
 $ekskul = isset($_POST['ekskul']) ? implode(",", $_POST['ekskul']) : "";
 
 $stmt = $conn->prepare("INSERT INTO tb_siswa VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)");

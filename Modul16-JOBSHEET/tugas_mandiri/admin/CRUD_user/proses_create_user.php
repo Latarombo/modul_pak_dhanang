@@ -7,7 +7,6 @@ $username = $_POST['username'];
 $password = $_POST['password'];
 $level    = $_POST['level'];
 
-// Cek username sudah ada atau belum
 $cek = $conn->prepare("SELECT id FROM tb_user WHERE username=?");
 $cek->bind_param("s", $username);
 $cek->execute();
@@ -20,7 +19,6 @@ if ($result_cek->num_rows > 0) {
 }
 
 $hash = password_hash($password, PASSWORD_DEFAULT);
-
 $stmt = $conn->prepare("INSERT INTO tb_user (username, password, level) VALUES (?, ?, ?)");
 $stmt->bind_param("sss", $username, $hash, $level);
 $stmt->execute();
