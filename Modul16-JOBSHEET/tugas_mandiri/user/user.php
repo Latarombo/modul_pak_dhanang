@@ -32,8 +32,9 @@ include "../login_level/cek.php";
 
 <h2>Dashboard Halaman User</h2>
 <p>Selamat datang, <?php echo $_SESSION['username']; ?></p>
+<p>Saya sudah daftar Eksta kurikuler <a href="dahsboard_user.php">Pergi ke Dashboard User</a></p>
 
-  <form action="../admin/proses_create.php" method="post">
+  <form action="../admin/CRUD_pendaftaran/proses_create.php" method="post">
     <table>
       <tr>
         <td colspan="3" align="center">
