@@ -1,7 +1,7 @@
 <?php
 $level_akses = "admin";
-include "../login_level/cek.php";
-include '../login_level/koneksi.php';
+include "../../login_level/cek.php";
+include '../../login_level/koneksi.php';
 
 if (!isset($_GET['nis'])) {
     echo "NIS tidak valid!";
@@ -131,7 +131,7 @@ $tgl_val = $ttl_parts[2] ?? '';
     <tr>
       <td colspan="3">
         <button type="submit">Update</button>
-        <a href="admin.php">Batal</a>
+        <a href="../admin.php">Batal</a>
       </td>
     </tr>
 

@@ -1,7 +1,7 @@
 <?php
 $level_akses = "admin";
-include "../login_level/cek.php";
-include '../login_level/koneksi.php';
+include "../../login_level/cek.php";
+include '../../login_level/koneksi.php';
 
 if (!isset($_GET['nis'])) {
     echo "NIS tidak ditemukan!";
@@ -50,7 +50,7 @@ if (!$d) {
 </table>
 
 <br>
-<a href="admin.php">Kembali</a>
+<a href="../admin.php">Kembali</a>
 
 </body>
 </html>

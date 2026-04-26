@@ -1,6 +1,6 @@
 <?php
 $level_akses = "admin";
-include "../login_level/cek.php";
+include "../../login_level/cek.php";
 ?>
 <!DOCTYPE html>
 <html lang="id">

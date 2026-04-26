@@ -1,6 +1,6 @@
 <?php
-include '../login_level/koneksi.php';
-include "../login_level/cek.php";
+include '../../login_level/koneksi.php';
+include "../../login_level/cek.php";
 
 $nis    = $_POST['nis'];
 $nama   = $_POST['nama'];
@@ -27,7 +27,7 @@ $stmt->execute();
 $stmt->close();
 
 if ($_SESSION['level'] == "admin") {
-    header("Location: admin.php");
+    header("Location: ../admin.php");
 } else {
     header("Location: ../user/user.php");
 }

@@ -1,7 +1,7 @@
 <?php
 $level_akses = "admin";
-include "../login_level/cek.php";
-include '../login_level/koneksi.php';
+include "../../login_level/cek.php";
+include '../../login_level/koneksi.php';
 
 $nis    = $_POST['nis'];
 $nama   = $_POST['nama'];
@@ -27,4 +27,4 @@ $stmt->bind_param("sssssssss", $nama, $kelas, $ttl, $alamat, $kota, $jk, $hobi, 
 $stmt->execute();
 $stmt->close();
 
-header("Location: admin.php");
+header("Location: ../admin.php");
