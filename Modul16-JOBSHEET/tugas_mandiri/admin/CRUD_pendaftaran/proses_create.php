@@ -29,5 +29,5 @@ $stmt->close();
 if ($_SESSION['level'] == "admin") {
     header("Location: ../admin.php");
 } else {
-    header("Location: ../../user/dahsboard_user.php");
+    header("Location: ../../user/dashboard_user.php");
 }

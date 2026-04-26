@@ -19,8 +19,6 @@ include "../login_level/koneksi.php";
 
 <h2>Data Siswa</h2>
 
-<a href="user.php">Daftar</a>
-
 <table border="1" cellpadding="10">
   <tr>
     <th>NIS</th>
