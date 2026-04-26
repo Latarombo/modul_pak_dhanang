@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Modul_10-TugasMandiri</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background: #f2f0ea;
+      }
+      .container {
+        width: 500px;
+        margin: 30px auto;
+        background: white;
+        padding: 20px;
+        border-radius: 8px;
+      }
+      h2 {
+        text-align: center;
+        color: darkcyan;
+      }
+      label {
+        font-weight: bold;
+      }
+      input,
+      select,
+      textarea,
+      button {
+        width: 100%;
+        box-sizing: border-box;
+        margin: 6px 0 12px;
+        padding-top: 8px;
+        padding-bottom: 8px;
+      }
+
+      .radio-group input {
+        width: auto;
+      }
+      button {
+        background: #3498db;
+        color: white;
+        border: none;
+        cursor: pointer;
+      }
+      button.reset {
+        background: #2980b9;
+      }
+      .output {
+        margin-top: 20px;
+        background: #eef3ff;
+        padding: 15px;
+        border-radius: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <form
+      id="formDaftar"
+      onsubmit="
+        daftar();
+        return false;
+      "
+    >
+      <div class="container">
+        <h2>Form Pendaftaran Perpustakaan</h2>
+
+        <label>Nama Lengkap</label>
+        <input type="text" id="nama" required />
+
+        <label>NIS / NISN</label>
+        <input type="text" id="nis" maxlength="10" required />
+
+        <label>Jurusan</label>
+        <select id="jurusan" required>
+          <option value="">-- Pilih Jurusan --</option>
+          <option>RPL</option>
+          <option>TKJ</option>
+          <option>TG</option>
+          <option>DKV</option>
+          <option>MEKA</option>
+          <option>TL</option>
+          <option>PH</option>
+          <option>ANI</option>
+        </select>
+
+        <label>Kelas</label>
+        <select id="kelas" required>
+          <option value="">-- Pilih Kelas --</option>
+          <option>X</option>
+          <option>XI</option>
+          <option>XII</option>
+        </select>
+
+        <label>Jenis Kelamin</label>
+        <div class="radio-group">
+          <input type="radio" name="jk" value="Laki-laki" /> Laki-laki
+          <input type="radio" name="jk" value="Perempuan" /> Perempuan
+        </div>
+
+        <label>Tempat Lahir</label>
+        <input type="text" id="tempat" required />
+
+        <label>Tanggal Lahir</label>
+        <input type="date" id="tgl" required />
+
+        <label>Alamat</label>
+        <textarea id="alamat" required></textarea>
+
+        <label>No. HP</label>
+        <input type="text" id="hp" maxlength="13" required />
+
+        <label>Email</label>
+        <input type="email" id="email" required />
+
+        <button type="submit">Daftar</button>
+        <button type="button" class="reset" onclick="resetForm()">
+          Kosongkan
+        </button>
+
+        <div class="output" id="output"></div>
+      </div>
+    </form>
+    <script>
+      function daftar() {
+        let nama = document.getElementById("nama").value;
+        let nis = document.getElementById("nis").value;
+        let jurusan = document.getElementById("jurusan").value;
+        let kelas = document.getElementById("kelas").value;
+        let tempat = document.getElementById("tempat").value;
+        let tgl = document.getElementById("tgl").value;
+        let alamat = document.getElementById("alamat").value;
+        let hp = document.getElementById("hp").value;
+        let email = document.getElementById("email").value;
+
+        let jk = "";
+        let radio = document.getElementsByName("jk");
+        for (let i = 0; i < radio.length; i++) {
+          if (radio[i].checked) {
+            jk = radio[i].value;
+          }
+        }
+
+        document.getElementById("output").innerHTML = `
+      <h3>Hasil Pendaftaran</h3>
+      <p><b>Nama:</b> ${nama}</p>
+      <p><b>NIS/NISN:</b> ${nis}</p>
+      <p><b>Jurusan:</b> ${jurusan}</p>
+      <p><b>Kelas:</b> ${kelas}</p>
+      <p><b>Jenis Kelamin:</b> ${jk}</p>
+      <p><b>Tempat, Tgl Lahir:</b> ${tempat} ${tgl}</p>
+      <p><b>Alamat:</b> ${alamat}</p>
+      <p><b>No HP:</b> ${hp}</p>
+      <p><b>Email:</b> ${email}</p>
+    `;
+      }
+
+      function resetForm() {
+        document.getElementById("formDaftar").reset();
+        document.getElementById("output").innerHTML = "";
+      }
+    </script>
+  </body>
+</html>

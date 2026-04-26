@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Data Siswa RPL</title>
+    <style>
+      table {
+        border-collapse: collapse;
+        width: 400px;
+      }
+      th,
+      td {
+        border: 1px solid black;
+        padding: 6px;
+        text-align: center;
+      }
+      th {
+        background-color: #f0f0f0;
+      }
+    </style>
+  </head>
+  <body>
+    <script>
+      // Tabel
+      document.write("<h1>Data Nama Siswa RPL</h1>");
+      document.write("<h3>SMK Negeri 4 Malang</h3>");
+      document.write("<table>");
+      document.write(
+        "<tr><th>No</th><th>NIS</th><th>Nama Siswa</th><th>Kelas</th></tr>",
+      );
+
+      // Array data siswa RPL (objek)
+      let siswa = [
+        { nis: "1001", nama: "Andi", kelas: "X RPL A" },
+        { nis: "1002", nama: "Budi", kelas: "X RPL B" },
+        { nis: "1003", nama: "Citra", kelas: "X RPL C" },
+        { nis: "1004", nama: "Dewi", kelas: "XI RPL A" },
+      ];
+
+      // Menggunakan perulangan forEach
+      siswa.forEach(function (item, index) {
+        document.write("<tr>");
+        document.write("<td>" + (index + 1) + "</td>");
+        document.write("<td>" + item.nis + "</td>");
+        document.write("<td>" + item.nama + "</td>");
+        document.write("<td>" + item.kelas + "</td>");
+        document.write("</tr>");
+      });
+      document.write("</table>");
+    </script>
+  </body>
+</html>

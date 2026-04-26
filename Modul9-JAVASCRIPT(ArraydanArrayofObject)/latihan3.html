@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Modul 9-Latihan 3</title>
+  </head>
+  <body>
+    <script>
+      let buah = ["Apel", "Jeruk", "Mangga", "Pisang"];
+      document.write("<h3>Daftar Buah: </h3>");
+      document.write("<ol>");
+      // menggunakan perulangan untuk mencetak semua isi array
+      // buah.forEach((data) => {
+      // Menggunakan backtick -> `
+      // ${} untuk menyisipkan variabel
+      //   document.write(`<li>${data}</li>`);
+      // });
+      buah.forEach(function (item, index) {
+        document.write(index + 1 + ". " + item + "<br>");
+      });
+      document.write("</ol>");
+    </script>
+  </body>
+</html>

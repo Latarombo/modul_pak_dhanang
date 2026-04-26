@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Modul 9-Latihan 5</title>
+  </head>
+  <body>
+    <h3>Daftar Buah:</h3>
+    <ul id="daftar"></ul>
+    <script>
+      let buah = ["Apel", "Jeruk", "Mangga", "Pisang"];
+      let list = document.getElementById("daftar");
+      // Menggunakan perulangan untuk mencetak array
+      let no = 1;
+      for (let i = 0; i < buah.length; i++) {
+        list.innerHTML += no++ + ". " + buah[i] + "<br>";
+      }
+    </script>
+  </body>
+</html>

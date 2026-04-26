@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Profil Diri</title>
+  </head>
+
+  <body
+    style="margin: 40px auto; max-width: 900px; font-family: Arial, sans-serif"
+  >
+    <!-- Navigasi -->
+    <header>
+      <nav style="margin-bottom: 25px">
+        <a href="#beranda">Beranda</a> | <a href="#tentang">Tentang</a> |
+        <a href="#hobi">Hobi</a> | <a href="#informasi">Informasi</a> |
+        <a href="#kontak">Kontak</a>
+      </nav>
+      <hr />
+    </header>
+
+    <main>
+      <!-- Judul -->
+      <h1 id="beranda">Profil Diri</h1>
+
+      <p>
+        Selamat datang di halaman profil <b>Mochammad Rizky Zidane</b>. Website
+        sederhana ini dibuat untuk memperkenalkan diri saya serta memberikan
+        informasi singkat mengenai profil, hobi, dan beberapa hal yang berkaitan
+        dengan diri saya. Semoga halaman ini dapat memberikan gambaran tentang
+        siapa saya.
+      </p>
+
+      <!-- Tentang Saya -->
+      <section id="tentang">
+        <h2>Tentang Saya</h2>
+
+        <p>
+          Saya adalah seorang siswa yang sedang mempelajari dasar-dasar
+          pembuatan website menggunakan HTML. Saya memiliki minat yang besar
+          terhadap teknologi, khususnya dalam bidang pemrograman dan
+          pengembangan web.
+        </p>
+
+        <p>
+          Dengan mempelajari HTML, saya dapat membuat halaman website sederhana
+          yang berisi berbagai elemen seperti teks, gambar, tabel, dan formulir.
+          Website ini merupakan salah satu contoh hasil belajar saya dalam
+          memahami dasar-dasar pembuatan website.
+        </p>
+
+        <figure style="margin-top: 20px">
+          <img
+            src="https://images.unsplash.com/photo-1529665253569-6d01c0eaf7b6?q=80&w=1085&auto=format&fit=crop"
+            width="300"
+            alt="foto profil"
+          />
+          <figcaption><i>Foto Profil</i></figcaption>
+        </figure>
+      </section>
+
+      <hr />
+
+      <!-- Hobi -->
+      <section id="hobi">
+        <h2>Hobi Saya</h2>
+
+        <ul>
+          <li>Membaca</li>
+          <li>Bermain Game</li>
+          <li>Belajar Coding</li>
+        </ul>
+      </section>
+
+      <hr />
+
+      <!-- Tabel -->
+      <section id="informasi">
+        <h2>Informasi Pribadi</h2>
+
+        <table border="1" cellpadding="8" cellspacing="0">
+          <tr>
+            <th colspan="2">Data Diri</th>
+          </tr>
+
+          <tbody>
+            <tr>
+              <td>Nama</td>
+              <td>Mochammad Rizky Zidane</td>
+            </tr>
+
+            <tr>
+              <td>Sekolah</td>
+              <td>SMKN 4 MALANG</td>
+            </tr>
+
+            <tr>
+              <td>Kelas</td>
+              <td>X RPL C</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <hr />
+
+      <!-- Form -->
+      <section id="kontak">
+        <h2>Form Kontak</h2>
+
+        <p>Hubungi saya dengan mengisi form kontak ini.</p>
+
+        <form action="#" method="post">
+          <label for="nama">Nama:</label><br />
+          <input type="text" id="nama" name="nama" required /><br /><br />
+
+          <label for="email">Email:</label><br />
+          <input type="email" id="email" name="email" required /><br /><br />
+
+          <label for="tujuan">Kenapa menghubungi saya:</label><br /><br />
+          <select id="tujuan" name="tujuan" required>
+            <option value="bertanya">Bertanya</option>
+            <option value="ngobrol">Ngobrol</option>
+            <option value="hire">Hire Saya</option>
+          </select>
+
+          <br /><br />
+
+          <label for="deskripsi">Deskripsi:</label><br /><br />
+          <textarea
+            id="deskripsi"
+            name="deskripsi"
+            rows="4"
+            cols="40"
+            placeholder="Deskripsikan pesan Anda"
+            required
+          ></textarea>
+
+          <br /><br />
+
+          <input type="submit" value="Kirim" />
+        </form>
+      </section>
+    </main>
+  </body>
+</html>

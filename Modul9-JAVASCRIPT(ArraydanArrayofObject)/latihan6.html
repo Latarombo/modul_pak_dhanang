@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Data Nama Siswa</title>
+  </head>
+  <body>
+    <h2>Data Nama Siswa</h2>
+    <h4>Tampil di console log</h4>
+    <script>
+      // Array data siswa (objek)
+      let siswa = [
+        { nis: "1001", nama: "Andi" },
+        { nis: "1002", nama: "Budi" },
+        { nis: "1003", nama: "Citra" },
+        { nis: "1004", nama: "Dewi" },
+      ];
+      // Perulangan forEach, tampil di console log
+      siswa.forEach((item, index) => {
+        console.log(
+          index + 1 + ". " + "NIS: " + item.nis + ", Nama: " + item.nama,
+        );
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Travel Grafika</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f2f6f8;
+        color: #333;
+        display: flex;
+        justify-content: center;
+        margin-top: 50px;
+      }
+
+      table {
+        border-collapse: collapse;
+        width: 500px;
+        background-color: #fff;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+        overflow: hidden;
+      }
+
+      th,
+      td {
+        padding: 12px 15px;
+        text-align: left;
+      }
+
+      h2 {
+        margin: 0;
+        padding: 15px;
+        background-color: #4caf50;
+        color: white;
+        text-align: center;
+      }
+
+      input[type="text"],
+      select {
+        width: 100%;
+        padding: 8px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+      }
+
+      input[type="checkbox"] {
+        transform: scale(1.2);
+        margin-right: 5px;
+      }
+
+      input[type="button"] {
+        padding: 10px 20px;
+        margin: 5px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        background-color: #4caf50;
+        color: white;
+        font-weight: bold;
+      }
+
+      input[type="button"]:hover {
+        background-color: #45a049;
+      }
+
+      td[colspan="2"] {
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <form name="fform">
+      <table width="100%" align="center" border="1px">
+        <tr>
+          <td width="100%" colspan="2">
+            <h2 align="center">Travel Grafika</h2>
+          </td>
+        </tr>
+        <tr>
+          <td>Nama:</td>
+          <td><input type="text" size="25" name="nama" id="inama" /></td>
+        </tr>
+        <tr>
+          <td>Tujuan:</td>
+          <td colspan="2">
+            <select name="tujuan" id="itujuan">
+              <option value="">Tentukan Tujuan</option>
+              <option value="MLG">MALANG</option>
+              <option value="SBY">SURABAYA</option>
+              <option value="TGL">TRENGGALEK</option>
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <td>Jumlah Tiket:</td>
+          <td><input type="text" size="25" name="tiket" id="itiket" /></td>
+        </tr>
+
+        <tr>
+          <td>Member:</td>
+          <td>
+            <input type="checkbox" size="25" name="member" id="imember" />Ya
+          </td>
+        </tr>
+
+        <tr>
+          <td>Harga Tiket:</td>
+          <td><input type="text" size="25" id="iharga" readonly /></td>
+        </tr>
+
+        <tr>
+          <td>Sub Total:</td>
+          <td>
+            <input type="text" size="25" id="isubTotal" readonly />
+          </td>
+        </tr>
+
+        <tr>
+          <td>Diskon:</td>
+          <td>
+            <input type="text" size="25" id="idiskon" readonly />
+          </td>
+        </tr>
+
+        <tr>
+          <td>Total Bayar:</td>
+          <td>
+            <input type="text" size="25" id="itotal" readonly />
+          </td>
+        </tr>
+
+        <!-- Tombol -->
+        <tr>
+          <td colspan="2" align="center">
+            <input type="button" value="Hitung" onclick="total()" />
+            <input type="button" value="Reset" onclick="resetForm()" />
+          </td>
+        </tr>
+      </table>
+    </form>
+    <script>
+      // Fungsi total
+      function total() {
+        var nama = document.getElementById("inama").value;
+        var jumlahTiket = Number(document.getElementById("itiket").value) || 0;
+        var hargaTiket = 25000;
+        var subTotal = hargaTiket * jumlahTiket;
+        // Diskon
+        var membercb = document.getElementById("imember");
+        var diskon = membercb.checked ? 0.1 : 0;
+
+        // total
+        var totalBayar = subTotal * (1 - diskon);
+
+        // Tampilkan hasil
+        document.getElementById("iharga").value = hargaTiket;
+        document.getElementById("isubTotal").value = subTotal;
+        document.getElementById("idiskon").value = diskon * 100 + "%";
+        document.getElementById("itotal").value = totalBayar;
+
+        // Tampilkan hasil dalam alert
+        alert(
+          "Nama: " +
+            nama +
+            "\nTujuan: " +
+            document.getElementById("itujuan").value +
+            "\nJumlah Tiket: " +
+            jumlahTiket +
+            "\nHarga Tiket: " +
+            hargaTiket +
+            "\nSub Total: " +
+            subTotal +
+            "\nDiskon: " +
+            diskon * 100 +
+            "%" +
+            "\nTotal Bayar: " +
+            totalBayar
+        );
+      }
+
+      // Fungsi reset
+      function resetForm() {
+        document.fform.reset();
+        document.getElementById("iharga").value = "";
+        document.getElementById("isubTotal").value = "";
+        document.getElementById("idiskon").value = "";
+        document.getElementById("itotal").value = "";
+      }
+      // TanyaMember
+      var SelectTujuan = document.getElementById("itujuan");
+      SelectTujuan.addEventListener("change", function () {
+        var tujuan = SelectTujuan.value;
+        if (tujuan === "") return;
+
+        var pilihan = prompt(
+          "Pilih Member Anda:\n1 = Eksekutif\n2 = Bisnis\n3 = Ekonomi"
+        );
+
+        var NamaMember = "Bukan Member/Salah Input";
+
+        switch (pilihan) {
+          case "1":
+            NamaMember = "Eksekutif";
+            break;
+          case "2":
+            NamaMember = "Bisnis";
+            break;
+          case "3":
+            NamaMember = "Ekonomi";
+            break;
+          default:
+            NamaMember = "Bukan Member/Salah Input";
+        }
+
+        alert("Tujuan Anda: " + tujuan + "\nStatus Member Anda: " + NamaMember);
+      });
+    </script>
+  </body>
+</html>

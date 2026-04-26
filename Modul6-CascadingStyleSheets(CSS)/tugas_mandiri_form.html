@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Formulir Pendaftaran</title>
+    <style type="text/css">
+        body {
+            background-color: #6751E8;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        form {
+            display: flex;
+            justify-content: center;
+            margin-top: 50px;
+        }
+
+        table {
+            background-color: #ffff;
+            border: 4px solid #000000a8;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.6);
+            background-image: url("images/bg_color.png");
+            background-repeat: no-repeat;
+            background-position: center ;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        td {
+            padding: 8px 10px;
+            vertical-align: top;
+        }
+
+        input[type="hh"],
+        input[type="bb"],
+        input[type="tttt"] {
+            border: 2px solid #cccc;
+            padding: 5px;
+            font-size: 14px;
+            border-radius: 4px;
+        }
+
+        input[type="text"],
+        input[type="password"],
+        textarea, select {
+            border: 2px solid #cccc;
+            padding: 5px;
+            font-size: 14px;
+            border-radius: 4px;
+            width: 100%;
+        }
+
+        input[type="password"] {
+            background-color: #FFFCC8;
+        }
+
+        input[type="submit"],
+        input[type="reset"] {
+            background-color: #6751E8;
+            color: white;
+            border: none;
+            padding: 8px 20px;
+            margin: 5px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+
+        input[type="submit"]:hover,
+        input[type="reset"]:hover {
+            background-color: #5944c6;
+        }
+
+        .center {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <form method="post" action="">
+        <table>
+        <tr>
+            <td colspan="6" class="center">
+            <h2>Formulir Pendaftaran</h2>
+            </td>
+        </tr>
+
+        <tr>
+            <td>Nama</td>
+            <td>:</td>
+            <td colspan="2">
+            <input type="text" name="nama" placeholder="Masukkan Nama Anda">
+            </td>
+        </tr>
+
+        <tr>
+            <td>Password</td>
+            <td>:</td>
+            <td colspan="2">
+            <input type="password" name="password">
+            </td>
+        </tr>
+
+        <tr>
+            <td>Tanggal Lahir</td>
+            <td>:</td>
+            <td colspan="2">
+            <input type="hh" size="2" maxlength="2" placeholder="HH"> /
+            <input type="bb" size="2" maxlength="2" placeholder="BB"> /
+            <input type="tttt" size="4" maxlength="4" placeholder="TTTT">
+            <small>(hh/bb/tttt)</small>
+            </td>
+        </tr>
+
+        <tr>
+            <td>Jenis Kelamin</td>
+            <td>:</td>
+            <td><input type="radio" name="gender" value="Laki-Laki"> Laki-Laki</td>
+            <td><input type="radio" name="gender" value="Perempuan"> Perempuan</td>
+        </tr>
+
+        <tr>
+            <td>Jurusan</td>
+            <td>:</td>
+            <td colspan="2">
+            <select name="jurusan">
+                <option value="RPL" selected>RPL</option>
+                <option value="TKJ">TKJ</option>
+                <option value="TM">TM</option>
+                <option value="DKV">DKV</option>
+                <option value="ANI">ANI</option>
+                <option value="TG">TG</option>
+                <option value="PH">PH</option>
+                <option value="TL">TL</option>
+            </select>
+            </td>
+        </tr>
+
+        <tr>
+            <td rowspan="2">Hobi</td>
+            <td rowspan="2">:</td>
+            <td><input type="checkbox" name="hobi" value="Football"> Football</td>
+            <td><input type="checkbox" name="hobi" value="Traveling"> Traveling</td>
+            <td><input type="checkbox" name="hobi" value="Blogging"> Blogging</td>
+        </tr>
+
+        <tr>
+            <td><input type="checkbox" name="hobi" value="Music"> Music</td>
+            <td><input type="checkbox" name="hobi" value="Adventure"> Adventure</td>
+            <td><input type="checkbox" name="hobi" value="Lainnya"> Lainnya</td>
+        </tr>
+
+        <tr>
+            <td>Alamat</td>
+            <td>:</td>
+            <td colspan="3">
+            <textarea name="alamat" cols="30" rows="5" placeholder="Masukkan alamat lengkap"></textarea>
+            </td>
+        </tr>
+
+        <tr>
+            <td colspan="6" class="center">
+            <input type="submit" value="Kirim">
+            <input type="reset" value="Hapus">
+            </td>
+        </tr>
+        </table>
+    </form>
+</body>
+</html>

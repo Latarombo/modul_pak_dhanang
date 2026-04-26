@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Modul 10-Latihan 2</title>
+  </head>
+  <body>
+    <p>Hello World!</p>
+    <div id="main">
+      <p>The DOM is very useful.</p>
+      <p>This example demonstrates the <b>getElementsByTagName</b> method</p>
+    </div>
+    <p id="demo"></p>
+    <script>
+      // ambil elemen id="main" simpan di var x
+      var x = document.getElementById("main");
+      // cari/akses seluruh tagname p simpan di var y
+      var y = x.getElementsByTagName("p");
+      //  tampilkan isi paragraf pertama pada id="demo"
+      document.getElementById("demo").innerHTML =
+        'The first paragraph  inside "main" is' + y[0].innerHTML;
+    </script>
+  </body>
+</html>
