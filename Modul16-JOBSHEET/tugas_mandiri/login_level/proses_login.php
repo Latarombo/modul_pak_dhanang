@@ -1,5 +1,7 @@
 <?php
-session_start();
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
 include "koneksi.php";
 
 if (isset($_POST['login'])) {
@@ -10,7 +12,7 @@ if (isset($_POST['login'])) {
     $stmt->bind_param("s", $username);
     $stmt->execute();
     $result = $stmt->get_result();
-    $data = $result->fetch_assoc();
+    $data   = $result->fetch_assoc();
     $stmt->close();
 
     if ($data) {
@@ -20,14 +22,14 @@ if (isset($_POST['login'])) {
 
             if ($data['level'] == "admin") {
                 header("Location: ../admin/admin.php");
-            } else if ($data['level'] == "user") {
+            } elseif ($data['level'] == "user") {
                 header("Location: ../user/user.php");
             }
             exit();
         } else {
-            echo "Password salah!";
+            echo "Password salah! <a href='login.php'>Kembali</a>";
         }
     } else {
-        echo "Username tidak ditemukan!";
+        echo "Username tidak ditemukan! <a href='login.php'>Kembali</a>";
     }
 }

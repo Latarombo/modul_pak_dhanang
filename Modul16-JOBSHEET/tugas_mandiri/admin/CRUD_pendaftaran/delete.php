@@ -15,3 +15,4 @@ $stmt->execute();
 $stmt->close();
 
 header("Location: ../admin.php");
+exit();
