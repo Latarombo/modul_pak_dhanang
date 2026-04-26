@@ -29,18 +29,15 @@ include '../login_level/koneksi.php';
   while ($d = mysqli_fetch_array($data)) {
   ?>
     <tr>
-      <td><?= $d['nis']; ?></td>
-      <td><?= $d['nama']; ?></td>
-      <td><?= $d['kelas']; ?></td>
-
-      <!-- biar lebih jelas -->
+      <td><?= htmlspecialchars($d['nis']); ?></td>
+      <td><?= htmlspecialchars($d['nama']); ?></td>
+      <td><?= htmlspecialchars($d['kelas']); ?></td>
       <td><?= $d['jk'] == 'L' ? 'Laki-Laki' : 'Perempuan'; ?></td>
-
-      <td><?= $d['ekskul']; ?></td>
+      <td><?= htmlspecialchars($d['ekskul']); ?></td>
       <td>
-        <a href="detail.php?nis=<?= $d['nis']; ?>">Detail</a> |
-        <a href="edit.php?nis=<?= $d['nis']; ?>">Edit</a> |
-        <a href="delete.php?nis=<?= $d['nis']; ?>">Hapus</a>
+        <a href="detail.php?nis=<?= urlencode($d['nis']); ?>">Detail</a> |
+        <a href="edit.php?nis=<?= urlencode($d['nis']); ?>">Edit</a> |
+        <a href="delete.php?nis=<?= urlencode($d['nis']); ?>" onclick="return confirm('Yakin ingin menghapus data ini?')">Hapus</a>
       </td>
     </tr>
   <?php } ?>

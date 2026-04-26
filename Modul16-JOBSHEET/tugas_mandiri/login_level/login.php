@@ -1,10 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <title>Login</title>
 </head>
-
 <body>
   <h2>Login Sistem</h2>
   <form method="post" action="proses_login.php">
@@ -13,5 +11,4 @@
     <input type="submit" name="login" value="Login">
   </form>
 </body>
-
 </html>

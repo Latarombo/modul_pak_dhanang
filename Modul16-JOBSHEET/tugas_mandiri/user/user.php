@@ -1,13 +1,5 @@
 <!DOCTYPE html>
 <html lang="id">
-<?php
-$level_akses = "user";
-include "../login_level/cek.php";
-?>
-
-<h2>Dashboard Halaman User</h2>
-<p>Selamat datang, <?php echo $_SESSION['username']; ?></p>
-
 <head>
   <meta charset="UTF-8">
   <title>Pendaftaran Ekstrakurikuler</title>
@@ -31,8 +23,16 @@ include "../login_level/cek.php";
     }
   </style>
 </head>
-
 <body>
+
+<?php
+$level_akses = "user";
+include "../login_level/cek.php";
+?>
+
+<h2>Dashboard Halaman User</h2>
+<p>Selamat datang, <?php echo $_SESSION['username']; ?></p>
+
   <form action="../admin/proses_create.php" method="post">
     <table>
       <tr>
@@ -148,8 +148,9 @@ include "../login_level/cek.php";
       </tr>
     </table>
   </form>
-</body>
 
-</html>
-
+<br>
 <a href="../login_level/logout.php">Logout</a>
+
+</body>
+</html>
