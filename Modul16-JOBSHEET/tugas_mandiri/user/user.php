@@ -1,19 +1,29 @@
 <?php
 $level_akses = "user";
-$page_title  = "Pendaftaran Ekstrakurikuler";
-$active      = "daftar";
 include "../login_level/cek.php";
 
-// Kalau sudah daftar di sesi ini, tidak boleh ke halaman ini lagi
 if ($_SESSION['sudah_daftar'] === true) {
     header("Location: dashboard_user.php");
     exit();
 }
-
-include '../_sidebar_open.php';
 ?>
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pendaftaran Ekstrakurikuler — Ekskul</title>
+</head>
+<body>
 
-<h2>Form Pendaftaran Ekstrakurikuler</h2>
+<nav>
+  Sistem Ekstrakurikuler |
+  Login sebagai: <strong><?= htmlspecialchars($_SESSION['username']) ?></strong> (User) |
+  <a href="../login_level/logout.php">Logout</a>
+</nav>
+<hr>
+
+<h1>Pendaftaran Ekstrakurikuler</h1>
 <p>* Semua field wajib diisi</p>
 
 <form action="../admin/CRUD_pendaftaran/proses_create.php" method="post">

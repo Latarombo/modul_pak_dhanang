@@ -20,15 +20,29 @@ if (!$u) {
     echo "User tidak ditemukan! <a href='../admin.php'>Kembali</a>";
     exit;
 }
-
-$page_title = "Edit User";
-$active     = "user";
-include '../../_sidebar_open.php';
 ?>
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Edit User — Ekskul</title>
+</head>
+<body>
+
+<nav>
+  Sistem Ekstrakurikuler |
+  <a href="../admin.php">Dashboard</a> |
+  <a href="../admin.php#siswa">Data Siswa</a> |
+  <a href="../admin.php#user">Manajemen User</a> |
+  Login sebagai: <strong><?= htmlspecialchars($_SESSION['username']) ?></strong> (Admin) |
+  <a href="../../login_level/logout.php">Logout</a>
+</nav>
+<hr>
+
+<h1>Edit User</h1>
 
 <p><a href="../admin.php">&larr; Kembali ke Dashboard</a></p>
-
-<h2>Edit User</h2>
 <p>ID tidak dapat diubah.</p>
 
 <form action="proses_edit_user.php" method="POST">

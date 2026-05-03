@@ -27,15 +27,29 @@ $ttl_parts   = explode("-", $d['ttl']);
 $thn_val = $ttl_parts[0] ?? '';
 $bln_val = $ttl_parts[1] ?? '';
 $tgl_val = $ttl_parts[2] ?? '';
-
-$page_title = "Edit Data Siswa";
-$active     = "siswa";
-include '../../_sidebar_open.php';
 ?>
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Edit Data Siswa — Ekskul</title>
+</head>
+<body>
+
+<nav>
+  Sistem Ekstrakurikuler |
+  <a href="../admin.php">Dashboard</a> |
+  <a href="../admin.php#siswa">Data Siswa</a> |
+  <a href="../admin.php#user">Manajemen User</a> |
+  Login sebagai: <strong><?= htmlspecialchars($_SESSION['username']) ?></strong> (Admin) |
+  <a href="../../login_level/logout.php">Logout</a>
+</nav>
+<hr>
+
+<h1>Edit Data Siswa</h1>
 
 <p><a href="../admin.php">&larr; Kembali ke Dashboard</a></p>
-
-<h2>Edit Data Siswa</h2>
 <p>NIS tidak dapat diubah.</p>
 
 <form action="proses_update.php" method="POST">

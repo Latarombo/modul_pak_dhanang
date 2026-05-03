@@ -2,11 +2,29 @@
 $level_akses = "admin";
 include "../login_level/cek.php";
 include '../login_level/koneksi.php';
+?>
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard Admin — Ekskul</title>
+</head>
+<body>
 
-$page_title = "Dashboard Admin";
-$active     = "dashboard";
-include '../_sidebar_open.php';
+<nav>
+  Sistem Ekstrakurikuler |
+  <a href="admin.php">Dashboard</a> |
+  <a href="admin.php#siswa">Data Siswa</a> |
+  <a href="admin.php#user">Manajemen User</a> |
+  Login sebagai: <strong><?= htmlspecialchars($_SESSION['username']) ?></strong> (Admin) |
+  <a href="../login_level/logout.php">Logout</a>
+</nav>
+<hr>
 
+<h1>Dashboard Admin</h1>
+
+<?php
 $total_siswa = mysqli_num_rows(mysqli_query($conn, "SELECT nis FROM tb_siswa"));
 $total_user  = mysqli_num_rows(mysqli_query($conn, "SELECT id FROM tb_user"));
 ?>

@@ -1,20 +1,32 @@
 <?php
 $level_akses = "user";
-$page_title  = "Dashboard";
-$active      = "dashboard";
 include "../login_level/cek.php";
 include "../login_level/koneksi.php";
 
-// Kalau belum daftar di sesi ini, paksa ke halaman pendaftaran dulu
 if ($_SESSION['sudah_daftar'] !== true) {
     header("Location: user.php");
     exit();
 }
-
-include '../_sidebar_open.php';
 ?>
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard — Ekskul</title>
+</head>
+<body>
 
-<p>Halo, <strong><?= htmlspecialchars($_SESSION['username']) ?></strong>!</p>
+<nav>
+  Sistem Ekstrakurikuler |
+  Login sebagai: <strong><?= htmlspecialchars($_SESSION['username']) ?></strong> (User) |
+  <a href="../login_level/logout.php">Logout</a>
+</nav>
+<hr>
+
+<h1>Dashboard</h1>
+
+<p>Halo, <strong><?= htmlspecialchars($_SESSION['username']) ?></strong>! Pendaftaran ekstrakurikuler kamu berhasil.</p>
 
 <h2>Data Siswa Terdaftar</h2>
 
@@ -43,8 +55,6 @@ include '../_sidebar_open.php';
     <?php endwhile; ?>
   </tbody>
 </table>
-
-<p><a href="../login_level/logout.php">Logout</a></p>
 
 </body>
 </html>
