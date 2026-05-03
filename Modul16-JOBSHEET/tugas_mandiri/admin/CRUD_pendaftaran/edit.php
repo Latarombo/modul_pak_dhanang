@@ -36,7 +36,7 @@ $tgl_val = $ttl_parts[2] ?? '';
 </head>
 <body>
 
-<?php include '../../_nav_admin.php'; ?>
+<?php $base = "../"; include '../../_nav_admin.php'; ?>
 
 <div class="container py-4" style="max-width:720px;">
 

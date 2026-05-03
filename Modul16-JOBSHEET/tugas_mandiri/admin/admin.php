@@ -13,7 +13,8 @@ include '../login_level/koneksi.php';
 
 <body>
 
-  <?php include '../_nav_admin.php'; ?>
+  <?php $base = "./";
+  include "../_nav_admin.php"; ?>
 
   <div class="container py-4">
 
