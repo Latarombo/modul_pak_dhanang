@@ -8,9 +8,8 @@ if (!isset($_SESSION['username'])) {
 
 // cek level (opsional, terganting halaman)
 if (isset($level_akses)) {
-  if($_SESSION['level'] != $level_akses) {
+  if ($_SESSION['level'] != $level_akses) {
     echo "Akses ditolak!";
     exit();
   }
 }
-?>

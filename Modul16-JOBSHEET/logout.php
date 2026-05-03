@@ -11,4 +11,3 @@ echo "<a href='login.php'>Login Kembali</a>";
 // Langsung redirect ke halaman login
 // header("Location: login.php");
 exit();
-?>

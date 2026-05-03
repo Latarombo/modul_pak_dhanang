@@ -30,4 +30,3 @@ if (isset($_POST['login'])) {
     echo "Username tidak ditemukan!";
   }
 }
-?>
