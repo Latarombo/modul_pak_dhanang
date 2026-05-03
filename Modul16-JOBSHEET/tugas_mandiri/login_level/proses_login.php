@@ -17,8 +17,9 @@ if (isset($_POST['login'])) {
 
     if ($data) {
         if (password_verify($password, $data['password'])) {
-            $_SESSION['username'] = $data['username'];
-            $_SESSION['level']    = $data['level'];
+            $_SESSION['username']     = $data['username'];
+            $_SESSION['level']        = $data['level'];
+            $_SESSION['sudah_daftar'] = false;
 
             if ($data['level'] == "admin") {
                 header("Location: ../admin/admin.php");

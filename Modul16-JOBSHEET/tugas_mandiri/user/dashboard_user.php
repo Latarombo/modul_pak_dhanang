@@ -4,11 +4,17 @@ $page_title  = "Dashboard";
 $active      = "dashboard";
 include "../login_level/cek.php";
 include "../login_level/koneksi.php";
+
+// Kalau belum daftar di sesi ini, paksa ke halaman pendaftaran dulu
+if ($_SESSION['sudah_daftar'] !== true) {
+    header("Location: user.php");
+    exit();
+}
+
 include '../_sidebar_open.php';
 ?>
 
-<p>Halo, <strong><?= htmlspecialchars($_SESSION['username']) ?></strong>! |
-<a href="user.php">Daftar Ekskul</a></p>
+<p>Halo, <strong><?= htmlspecialchars($_SESSION['username']) ?></strong>!</p>
 
 <h2>Data Siswa Terdaftar</h2>
 
@@ -37,6 +43,8 @@ include '../_sidebar_open.php';
     <?php endwhile; ?>
   </tbody>
 </table>
+
+<p><a href="../login_level/logout.php">Logout</a></p>
 
 </body>
 </html>

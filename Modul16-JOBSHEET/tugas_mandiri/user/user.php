@@ -3,6 +3,13 @@ $level_akses = "user";
 $page_title  = "Pendaftaran Ekstrakurikuler";
 $active      = "daftar";
 include "../login_level/cek.php";
+
+// Kalau sudah daftar di sesi ini, tidak boleh ke halaman ini lagi
+if ($_SESSION['sudah_daftar'] === true) {
+    header("Location: dashboard_user.php");
+    exit();
+}
+
 include '../_sidebar_open.php';
 ?>
 

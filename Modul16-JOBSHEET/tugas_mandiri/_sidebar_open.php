@@ -14,19 +14,25 @@ $level    = $_SESSION['level'] ?? 'admin';
 <nav>
   <strong>Sistem Ekstrakurikuler</strong>
   <br>
-  <a href="<?= ($level === 'admin') ? '../admin/admin.php' : '../user/dashboard_user.php' ?>">Dashboard</a>
 
   <?php if ($level === 'admin'): ?>
-  | <a href="../admin/admin.php#siswa">Data Siswa</a>
-  | <a href="../admin/admin.php#user">Manajemen User</a>
+    <a href="<?= strpos($_SERVER['PHP_SELF'], '/admin/') !== false ? 'admin.php' : '../admin/admin.php' ?>">Dashboard</a>
+    | <a href="<?= strpos($_SERVER['PHP_SELF'], '/admin/') !== false ? 'admin.php#siswa' : '../admin/admin.php#siswa' ?>">Data Siswa</a>
+    | <a href="<?= strpos($_SERVER['PHP_SELF'], '/admin/') !== false ? 'admin.php#user' : '../admin/admin.php#user' ?>">Manajemen User</a>
+    | <a href="<?= strpos($_SERVER['PHP_SELF'], '/admin/') !== false ? '../login_level/logout.php' : '../login_level/logout.php' ?>">Logout</a>
   <?php endif; ?>
 
   <?php if ($level === 'user'): ?>
-  | <a href="../user/user.php">Daftar Ekskul</a>
+    <?php if ($_SESSION['sudah_daftar'] === true): ?>
+      Dashboard
+      | <a href="../login_level/logout.php">Logout</a>
+    <?php else: ?>
+      Pendaftaran
+      | <a href="../login_level/logout.php">Logout</a>
+    <?php endif; ?>
   <?php endif; ?>
 
-  | Login sebagai: <strong><?= $username ?></strong> (<?= ucfirst($level) ?>)
-  | <a href="../login_level/logout.php">Keluar</a>
+  &nbsp;|&nbsp; Login sebagai: <strong><?= $username ?></strong> (<?= ucfirst($level) ?>)
 </nav>
 
 <hr>
