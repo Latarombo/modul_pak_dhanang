@@ -15,7 +15,7 @@ $result_cek = $cek->get_result();
 $cek->close();
 
 if ($result_cek->num_rows > 0) {
-    echo "Username sudah digunakan user lain! <a href='edit_user.php?id=" . urlencode($id) . "'>Kembali</a>";
+    header("Location: edit_user.php?id=" . urlencode($id) . "&error=exists");
     exit;
 }
 

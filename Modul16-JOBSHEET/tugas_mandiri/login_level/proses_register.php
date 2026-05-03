@@ -16,7 +16,8 @@ if (isset($_POST['submit'])) {
     $cek->close();
 
     if ($result->num_rows > 0) {
-        echo "Username sudah digunakan! <a href='register.php'>Kembali</a>";
+        header("Location: register.php?error=exists");
+        exit();
     } else {
         $hash = password_hash($password, PASSWORD_DEFAULT);
         $stmt = $conn->prepare("INSERT INTO tb_user (username, password, level) VALUES (?, ?, ?)");
@@ -25,7 +26,8 @@ if (isset($_POST['submit'])) {
             header("Location: login.php?registered=1");
             exit();
         } else {
-            echo "Register gagal! <a href='register.php'>Kembali</a>";
+            header("Location: register.php?error=failed");
+            exit();
         }
         $stmt->close();
     }

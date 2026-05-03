@@ -28,9 +28,11 @@ if (isset($_POST['login'])) {
             }
             exit();
         } else {
-            echo "Password salah! <a href='login.php'>Kembali</a>";
+            header("Location: login.php?error=password");
+            exit();
         }
     } else {
-        echo "Username tidak ditemukan! <a href='login.php'>Kembali</a>";
+        header("Location: login.php?error=username");
+        exit();
     }
 }

@@ -14,7 +14,7 @@ $result_cek = $cek->get_result();
 $cek->close();
 
 if ($result_cek->num_rows > 0) {
-    echo "Username sudah digunakan! <a href='create_user.php'>Kembali</a>";
+    header("Location: create_user.php?error=exists");
     exit;
 }
 

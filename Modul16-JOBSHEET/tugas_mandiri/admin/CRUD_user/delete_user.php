@@ -17,7 +17,8 @@ $user   = $result->fetch_assoc();
 $cek->close();
 
 if ($user && $user['username'] === $_SESSION['username']) {
-    echo "Tidak bisa menghapus akun sendiri! <a href='../admin.php'>Kembali</a>";
+    // Tidak bisa hapus diri sendiri — redirect dengan pesan
+    header("Location: ../admin.php?error=selfdelete");
     exit;
 }
 
