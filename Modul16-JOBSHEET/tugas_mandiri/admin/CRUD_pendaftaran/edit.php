@@ -33,111 +33,83 @@ $active     = "siswa";
 include '../../_sidebar_open.php';
 ?>
 
-<a href="../admin.php" class="btn-back">&larr; Kembali ke Dashboard</a>
+<p><a href="../admin.php">&larr; Kembali ke Dashboard</a></p>
 
-<div class="form-wrap">
-  <div class="form-head">
-    <h2>Edit Data Siswa</h2>
-    <p>Perbarui informasi siswa — NIS tidak dapat diubah</p>
-  </div>
-  <div class="form-body">
-    <form action="proses_update.php" method="POST">
-      <input type="hidden" name="nis" value="<?= htmlspecialchars($d['nis']) ?>">
+<h2>Edit Data Siswa</h2>
+<p>NIS tidak dapat diubah.</p>
 
-      <p class="f-section">Identitas Siswa</p>
+<form action="proses_update.php" method="POST">
+  <input type="hidden" name="nis" value="<?= htmlspecialchars($d['nis']) ?>">
 
-      <div class="field-block">
-        <label class="f-label">NIS</label>
-        <div class="f-static"><?= htmlspecialchars($d['nis']) ?> &mdash; tidak dapat diubah</div>
-      </div>
+  <h3>Identitas Siswa</h3>
 
-      <div class="field-block">
-        <label class="f-label">Nama Lengkap <span class="f-req">*</span></label>
-        <input type="text" name="nama" class="f-control" value="<?= htmlspecialchars($d['nama']) ?>" required>
-      </div>
+  <p>NIS: <strong><?= htmlspecialchars($d['nis']) ?></strong> (tidak dapat diubah)</p>
 
-      <div class="grid-2">
-        <div class="field-block">
-          <label class="f-label">Kelas <span class="f-req">*</span></label>
-          <select name="kelas" class="f-select" required>
-            <option value="X"   <?= $d['kelas'] == 'X'   ? 'selected' : '' ?>>X</option>
-            <option value="XI"  <?= $d['kelas'] == 'XI'  ? 'selected' : '' ?>>XI</option>
-            <option value="XII" <?= $d['kelas'] == 'XII' ? 'selected' : '' ?>>XII</option>
-          </select>
-        </div>
-        <div class="field-block">
-          <label class="f-label">Tanggal Lahir <span class="f-req">*</span></label>
-          <div class="date-row">
-            <input type="text" name="tgl" class="f-control" placeholder="DD" maxlength="2" value="<?= htmlspecialchars($tgl_val) ?>" required>
-            <span class="date-sep">/</span>
-            <input type="text" name="bln" class="f-control" placeholder="MM" maxlength="2" value="<?= htmlspecialchars($bln_val) ?>" required>
-            <span class="date-sep">/</span>
-            <input type="text" name="thn" class="f-control" placeholder="YYYY" maxlength="4" value="<?= htmlspecialchars($thn_val) ?>" required>
-          </div>
-        </div>
-      </div>
+  <p>
+    <label>Nama Lengkap *<br>
+    <input type="text" name="nama" value="<?= htmlspecialchars($d['nama']) ?>" required></label>
+  </p>
 
-      <hr class="f-divider">
-      <p class="f-section">Alamat &amp; Kontak</p>
+  <p>
+    <label>Kelas *<br>
+    <select name="kelas" required>
+      <option value="X"   <?= $d['kelas'] == 'X'   ? 'selected' : '' ?>>X</option>
+      <option value="XI"  <?= $d['kelas'] == 'XI'  ? 'selected' : '' ?>>XI</option>
+      <option value="XII" <?= $d['kelas'] == 'XII' ? 'selected' : '' ?>>XII</option>
+    </select></label>
+  </p>
 
-      <div class="field-block">
-        <label class="f-label">Alamat <span class="f-req">*</span></label>
-        <textarea name="alamat" class="f-control" required><?= htmlspecialchars($d['alamat']) ?></textarea>
-      </div>
+  <p>
+    Tanggal Lahir *<br>
+    <label>DD: <input type="text" name="tgl" placeholder="DD" maxlength="2" value="<?= htmlspecialchars($tgl_val) ?>" required></label>
+    <label>MM: <input type="text" name="bln" placeholder="MM" maxlength="2" value="<?= htmlspecialchars($bln_val) ?>" required></label>
+    <label>YYYY: <input type="text" name="thn" placeholder="YYYY" maxlength="4" value="<?= htmlspecialchars($thn_val) ?>" required></label>
+  </p>
 
-      <div class="field-block">
-        <label class="f-label">Kota <span class="f-req">*</span></label>
-        <input type="text" name="kota" class="f-control" value="<?= htmlspecialchars($d['kota']) ?>" required>
-      </div>
+  <hr>
+  <h3>Alamat &amp; Kontak</h3>
 
-      <hr class="f-divider">
-      <p class="f-section">Data Tambahan</p>
+  <p>
+    <label>Alamat *<br>
+    <textarea name="alamat" required><?= htmlspecialchars($d['alamat']) ?></textarea></label>
+  </p>
 
-      <div class="field-block">
-        <label class="f-label">Jenis Kelamin <span class="f-req">*</span></label>
-        <div class="toggle-group">
-          <label class="toggle-label">
-            <input type="radio" name="jk" value="L" <?= $d['jk'] == 'L' ? 'checked' : '' ?> required> Laki-Laki
-          </label>
-          <label class="toggle-label">
-            <input type="radio" name="jk" value="P" <?= $d['jk'] == 'P' ? 'checked' : '' ?>> Perempuan
-          </label>
-        </div>
-      </div>
+  <p>
+    <label>Kota *<br>
+    <input type="text" name="kota" value="<?= htmlspecialchars($d['kota']) ?>" required></label>
+  </p>
 
-      <div class="field-block">
-        <label class="f-label">Hobi</label>
-        <div class="toggle-group">
-          <?php foreach (['Membaca', 'Olahraga', 'Menyanyi', 'Menari', 'Traveling'] as $h): ?>
-            <label class="toggle-label">
-              <input type="checkbox" name="hobi[]" value="<?= $h ?>" <?= in_array($h, $hobi_list) ? 'checked' : '' ?>>
-              <?= $h ?>
-            </label>
-          <?php endforeach; ?>
-        </div>
-      </div>
+  <hr>
+  <h3>Data Tambahan</h3>
 
-      <div class="field-block">
-        <label class="f-label">Ekstrakurikuler</label>
-        <select name="ekskul[]" multiple size="7" class="select-multi">
-          <?php foreach (['Pramuka', 'Basket', 'Volly', 'Band', 'Seni Tari', 'Robotic', 'Bulu Tangkis'] as $e): ?>
-            <option value="<?= $e ?>" <?= in_array($e, $ekskul_list) ? 'selected' : '' ?>><?= $e ?></option>
-          <?php endforeach; ?>
-        </select>
-        <p class="f-hint">Tahan Ctrl / Cmd untuk memilih lebih dari satu</p>
-      </div>
+  <p>
+    Jenis Kelamin *<br>
+    <label><input type="radio" name="jk" value="L" <?= $d['jk'] == 'L' ? 'checked' : '' ?> required> Laki-Laki</label>
+    <label><input type="radio" name="jk" value="P" <?= $d['jk'] == 'P' ? 'checked' : '' ?>> Perempuan</label>
+  </p>
 
-      <div class="d-flex gap-2 mt-3">
-        <button type="submit" class="btn-submit">Update Data</button>
-        <a href="../admin.php" class="btn-cancel">Batal</a>
-      </div>
+  <p>
+    Hobi<br>
+    <?php foreach (['Membaca', 'Olahraga', 'Menyanyi', 'Menari', 'Traveling'] as $h): ?>
+    <label><input type="checkbox" name="hobi[]" value="<?= $h ?>" <?= in_array($h, $hobi_list) ? 'checked' : '' ?>> <?= $h ?></label>
+    <?php endforeach; ?>
+  </p>
 
-    </form>
-  </div>
-</div>
+  <p>
+    <label>Ekstrakurikuler (Tahan Ctrl/Cmd untuk pilih lebih dari satu)<br>
+    <select name="ekskul[]" multiple size="7">
+      <?php foreach (['Pramuka', 'Basket', 'Volly', 'Band', 'Seni Tari', 'Robotic', 'Bulu Tangkis'] as $e): ?>
+      <option value="<?= $e ?>" <?= in_array($e, $ekskul_list) ? 'selected' : '' ?>><?= $e ?></option>
+      <?php endforeach; ?>
+    </select></label>
+  </p>
 
-</div><!-- /page-body -->
-</div><!-- /main-wrap -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <p>
+    <button type="submit">Update Data</button>
+    <a href="../admin.php">Batal</a>
+  </p>
+
+</form>
+
 </body>
 </html>

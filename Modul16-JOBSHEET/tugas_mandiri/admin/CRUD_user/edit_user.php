@@ -26,52 +26,41 @@ $active     = "user";
 include '../../_sidebar_open.php';
 ?>
 
-<a href="../admin.php" class="btn-back">&larr; Kembali ke Dashboard</a>
+<p><a href="../admin.php">&larr; Kembali ke Dashboard</a></p>
 
-<div class="form-wrap form-wrap-sm">
-  <div class="form-head">
-    <h2>Edit User</h2>
-    <p>Perbarui data akun — ID tidak dapat diubah</p>
-  </div>
-  <div class="form-body">
-    <form action="proses_edit_user.php" method="POST">
-      <input type="hidden" name="id" value="<?= htmlspecialchars($u['id']) ?>">
+<h2>Edit User</h2>
+<p>ID tidak dapat diubah.</p>
 
-      <div class="field-block">
-        <label class="f-label">ID</label>
-        <div class="f-static">#<?= htmlspecialchars($u['id']) ?> &mdash; tidak dapat diubah</div>
-      </div>
+<form action="proses_edit_user.php" method="POST">
+  <input type="hidden" name="id" value="<?= htmlspecialchars($u['id']) ?>">
 
-      <div class="field-block">
-        <label class="f-label">Username <span class="f-req">*</span></label>
-        <input type="text" name="username" class="f-control" value="<?= htmlspecialchars($u['username']) ?>" required>
-      </div>
+  <p>ID: <strong>#<?= htmlspecialchars($u['id']) ?></strong> (tidak dapat diubah)</p>
 
-      <div class="field-block">
-        <label class="f-label">Password Baru</label>
-        <input type="password" name="password" class="f-control" placeholder="Kosongkan jika tidak ingin mengubah">
-        <p class="f-hint">Biarkan kosong untuk mempertahankan password lama</p>
-      </div>
+  <p>
+    <label>Username *<br>
+    <input type="text" name="username" value="<?= htmlspecialchars($u['username']) ?>" required></label>
+  </p>
 
-      <div class="field-block">
-        <label class="f-label">Level Akses <span class="f-req">*</span></label>
-        <select name="level" class="f-select" required>
-          <option value="user"  <?= $u['level']=='user'  ? 'selected':'' ?>>User</option>
-          <option value="admin" <?= $u['level']=='admin' ? 'selected':'' ?>>Admin</option>
-        </select>
-      </div>
+  <p>
+    <label>Password Baru<br>
+    <input type="password" name="password" placeholder="Kosongkan jika tidak ingin mengubah"></label><br>
+    <small>Biarkan kosong untuk mempertahankan password lama</small>
+  </p>
 
-      <div class="d-flex gap-2 mt-3">
-        <button type="submit" class="btn-submit">Update</button>
-        <a href="../admin.php" class="btn-cancel">Batal</a>
-      </div>
+  <p>
+    <label>Level Akses *<br>
+    <select name="level" required>
+      <option value="user"  <?= $u['level']=='user'  ? 'selected':'' ?>>User</option>
+      <option value="admin" <?= $u['level']=='admin' ? 'selected':'' ?>>Admin</option>
+    </select></label>
+  </p>
 
-    </form>
-  </div>
-</div>
+  <p>
+    <button type="submit">Update</button>
+    <a href="../admin.php">Batal</a>
+  </p>
 
-  </div><!-- /page-body -->
-</div><!-- /main-wrap -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</form>
+
 </body>
 </html>

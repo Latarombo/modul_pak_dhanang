@@ -1,5 +1,4 @@
 <?php
-// cek.php — always call session_start() here
 if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }

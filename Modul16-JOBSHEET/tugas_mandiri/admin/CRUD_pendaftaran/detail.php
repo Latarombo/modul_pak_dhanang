@@ -26,68 +26,26 @@ $active     = "siswa";
 include '../../_sidebar_open.php';
 ?>
 
-<a href="../admin.php" class="btn-back">&larr; Kembali ke Dashboard</a>
+<p><a href="../admin.php">&larr; Kembali ke Dashboard</a></p>
 
-<div class="detail-card">
-  <div class="detail-header">
-    <div class="detail-avatar"><?= strtoupper(substr($d['nama'], 0, 1)) ?></div>
-    <div class="detail-header-info">
-      <h2><?= htmlspecialchars($d['nama']) ?></h2>
-      <p>NIS: <?= htmlspecialchars($d['nis']) ?> &mdash; Kelas <?= htmlspecialchars($d['kelas']) ?></p>
-    </div>
-  </div>
+<h2>Detail Siswa: <?= htmlspecialchars($d['nama']) ?></h2>
 
-  <div class="detail-body">
-    <div class="detail-row">
-      <span class="detail-key">NIS</span>
-      <span class="detail-val mono"><?= htmlspecialchars($d['nis']) ?></span>
-    </div>
-    <div class="detail-row">
-      <span class="detail-key">Nama</span>
-      <span class="detail-val"><strong><?= htmlspecialchars($d['nama']) ?></strong></span>
-    </div>
-    <div class="detail-row">
-      <span class="detail-key">Kelas</span>
-      <span class="detail-val"><span class="chip chip-kelas"><?= htmlspecialchars($d['kelas']) ?></span></span>
-    </div>
-    <div class="detail-row">
-      <span class="detail-key">Tanggal Lahir</span>
-      <span class="detail-val"><?= date('d F Y', strtotime($d['ttl'])) ?></span>
-    </div>
-    <div class="detail-row">
-      <span class="detail-key">Alamat</span>
-      <span class="detail-val"><?= nl2br(htmlspecialchars($d['alamat'])) ?></span>
-    </div>
-    <div class="detail-row">
-      <span class="detail-key">Kota</span>
-      <span class="detail-val"><?= htmlspecialchars($d['kota']) ?></span>
-    </div>
-    <div class="detail-row">
-      <span class="detail-key">Jenis Kelamin</span>
-      <span class="detail-val"><?= $d['jk'] == 'L' ? 'Laki-Laki' : 'Perempuan' ?></span>
-    </div>
-    <div class="detail-row">
-      <span class="detail-key">Hobi</span>
-      <span class="detail-val"><?= htmlspecialchars($d['hobi']) ?></span>
-    </div>
-    <div class="detail-row">
-      <span class="detail-key">Ekstrakurikuler</span>
-      <span class="detail-val">
-        <?php foreach (explode(',', $d['ekskul']) as $eks): ?>
-          <span class="chip chip-ekskul"><?= htmlspecialchars(trim($eks)) ?></span>
-        <?php endforeach; ?>
-      </span>
-    </div>
-  </div>
+<table border="1" cellpadding="5" cellspacing="0">
+  <tr><th>NIS</th><td><?= htmlspecialchars($d['nis']) ?></td></tr>
+  <tr><th>Nama</th><td><?= htmlspecialchars($d['nama']) ?></td></tr>
+  <tr><th>Kelas</th><td><?= htmlspecialchars($d['kelas']) ?></td></tr>
+  <tr><th>Tanggal Lahir</th><td><?= date('d F Y', strtotime($d['ttl'])) ?></td></tr>
+  <tr><th>Alamat</th><td><?= nl2br(htmlspecialchars($d['alamat'])) ?></td></tr>
+  <tr><th>Kota</th><td><?= htmlspecialchars($d['kota']) ?></td></tr>
+  <tr><th>Jenis Kelamin</th><td><?= $d['jk'] == 'L' ? 'Laki-Laki' : 'Perempuan' ?></td></tr>
+  <tr><th>Hobi</th><td><?= htmlspecialchars($d['hobi']) ?></td></tr>
+  <tr><th>Ekstrakurikuler</th><td><?= htmlspecialchars($d['ekskul']) ?></td></tr>
+</table>
 
-  <div class="detail-footer">
-    <a href="edit.php?nis=<?= urlencode($d['nis']) ?>" class="btn-submit" style="text-decoration:none;">Edit Data</a>
-    <a href="../admin.php" class="btn-cancel">Kembali</a>
-  </div>
-</div>
+<p>
+  <a href="edit.php?nis=<?= urlencode($d['nis']) ?>">Edit Data</a> |
+  <a href="../admin.php">Kembali</a>
+</p>
 
-  </div><!-- /page-body -->
-</div><!-- /main-wrap -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
