@@ -56,6 +56,7 @@ $data = $result->fetch_assoc();
       <td></td>
       <td>
         <input type="reset" name="reset" value="RESET">
+        <a href="admin.php">Kembali</a>
       </td>
       <td></td>
     </tr>

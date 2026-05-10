@@ -31,7 +31,7 @@ if ($_FILES['image']['name'] != '') {
   $image_baru = $image_lama;
 }
 
-$query = "UPDATE news SET title='$title', content='$content', author='$author', image='$image_baru' WHERE id='$id'";
+$query = "UPDATE news SET title='$title', content='$content', author='$author', image='$image_baru', date=NOW() WHERE id='$id'";
 $hasil = mysqli_query($conn, $query);
 if ($hasil) {
   header('Location:admin.php');
