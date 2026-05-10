@@ -21,9 +21,7 @@ if (!in_array($ext, $allowed)) {
 
 // Pindahkan file
 if (move_uploaded_file($tmp, $target)) {
-  // Simpan ke database
-  $sql = "INSERT INTO news (title, content, author, image)
-          VALUES ('$title', '$content', '$author', '$image_baru')";
+  $sql = "INSERT INTO news (title, content, author, image) VALUES ('$title', '$content', '$author', '$image_baru')";
   if ($conn->query($sql) === TRUE) {
     header("Location: admin.php");
   } else {

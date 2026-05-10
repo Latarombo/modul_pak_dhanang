@@ -4,9 +4,7 @@ include "koneksi.php";
 if (isset($_POST['submit'])) {
   $username = $_POST['username'];
   $password = $_POST['password'];
-  $level = "user"; // Otomatis setiap register dianggap sebagai user
-
-  // cek username sudah ada atau belum
+  $level = "user";
   $cek = $conn->prepare("SELECT * FROM tb_user WHERE username=?");
   $cek->bind_param("s", $username);
   $cek->execute();
