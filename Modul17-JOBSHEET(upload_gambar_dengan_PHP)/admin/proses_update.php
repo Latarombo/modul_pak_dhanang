@@ -1,5 +1,8 @@
 <?php
 include "koneksi.php";
+$level_akses = "admin";
+include "../login/cek.php";
+
 $id = $_POST['id'];
 $title = $_POST['title'];
 $content = $_POST['content'];

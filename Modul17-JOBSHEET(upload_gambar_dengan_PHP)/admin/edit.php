@@ -30,7 +30,7 @@ $data = $result->fetch_assoc();
       <td>Content</td>
       <td>:</td>
       <td>
-        <textarea name="content" value="<?php echo $data['content']; ?>"></textarea>
+        <textarea name="content"><?php echo $data['content']; ?></textarea>
       </td>
     </tr>
     <tr>

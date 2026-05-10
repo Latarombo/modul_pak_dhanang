@@ -34,7 +34,7 @@ $row = $result->fetch_assoc();
     <tr>
       <td>Gambar</td>
       <td>
-        <img src="../admin/upload/<?= $row['image']; ?>" width="100">
+        <img src="upload/<?= $row['image']; ?>" width="100">
       </td>
     </tr>
     <tr>
@@ -44,7 +44,8 @@ $row = $result->fetch_assoc();
   </table>
   <br>
   <a href="admin.php">Kembali</a>
-  <a href="edit.php">Edit</a>
+  <br><br>
+  <a href="edit.php?id=<?= $row['id']; ?>">Edit</a>
 </body>
 
 </html>
