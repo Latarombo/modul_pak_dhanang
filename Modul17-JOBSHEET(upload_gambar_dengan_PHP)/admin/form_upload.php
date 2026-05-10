@@ -138,8 +138,8 @@ include "../login/cek.php";
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
   <script>
     function previewImage(input) {
-      if (input.files && input.files[0]) {
-        const reader = new FileReader();
+      if (input.files && input.files[0] && window.FileReader) {
+        const reader = new window.FileReader();
         reader.onload = function(e) {
           document.getElementById('previewImg').src = e.target.result;
           document.getElementById('imgPreview').classList.remove('d-none');

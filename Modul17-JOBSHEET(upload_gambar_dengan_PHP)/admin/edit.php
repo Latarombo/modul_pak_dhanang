@@ -166,7 +166,7 @@ $data = $result->fetch_assoc();
   <script>
     function previewNew(input) {
       if (input.files && input.files[0]) {
-        const reader = new FileReader();
+        const reader = new window.FileReader();
         reader.onload = function(e) {
           document.getElementById('newPreviewImg').src = e.target.result;
           document.getElementById('newPreview').classList.remove('d-none');
