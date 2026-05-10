@@ -1,8 +1,7 @@
 <?php
 $level_akses = "admin";
 include "../login/cek.php";
-include '../login/koneksi.php';
-include "CRUD/koneksi.php";
+include 'koneksi.php';
 $sql = "SELECT * FROM news ORDER BY id DESC";
 $result = $conn->query($sql);
 ?>
@@ -15,7 +14,7 @@ $result = $conn->query($sql);
 
 <body>
   <h2>Daftar Berita</h2>
-  <a href="CRUD/form_upload.php">+ Tambah Data</a>
+  <a href="form_upload.php">+ Tambah Data</a>
   <br><br>
   <table border="1" cellpadding="10" cellspacing="0">
     <tr>
@@ -41,19 +40,22 @@ $result = $conn->query($sql);
         </td>
         <td><?= $row['author']; ?></td>
         <td>
-          <img src="CRUD/upload/<?= $row['image']; ?>" width="100">
+          <img src="upload/<?= $row['image']; ?>" width="100">
         </td>
         <td><?= $row['date']; ?></td>
         <td>
           <a href="detail.php?id=<?= $row['id']; ?>">Detail</a> |
           <a href="edit.php?id=<?= $row['id']; ?>">Edit</a> |
-          <a href="hapus.php?id=<?= $row['id']; ?>" onclick="return confirm('Yakin hapus?')">Hapus</a>
+          <a href="delete.php?id=<?= $row['id']; ?>" onclick="return confirm('Yakin hapus?')">Hapus</a>
         </td>
       </tr>
 
     <?php } ?>
 
   </table>
+
+  <br>
+  <a href="../login/logout.php">Logout</a>
 </body>
 
 </html>

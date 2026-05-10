@@ -6,7 +6,7 @@ if (!isset($_SESSION['username'])) {
   exit();
 }
 
-// cek level (opsional, terganting halaman)
+// cek level (opsional, tergantung halaman)
 if (isset($level_akses)) {
   if ($_SESSION['level'] != $level_akses) {
     echo "Akses ditolak!";

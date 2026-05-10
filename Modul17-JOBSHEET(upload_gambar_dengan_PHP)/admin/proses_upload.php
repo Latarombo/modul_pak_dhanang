@@ -1,7 +1,7 @@
 <?php
 include "koneksi.php";
 $level_akses = "admin";
-include "../../login/cek.php";
+include "../login/cek.php";
 
 $title = $_POST['title'];
 $content = $_POST['content'];
@@ -25,7 +25,7 @@ if (move_uploaded_file($tmp, $target)) {
   $sql = "INSERT INTO news (title, content, author, image)
           VALUES ('$title', '$content', '$author', '$image_baru')";
   if ($conn->query($sql) === TRUE) {
-    header("Location: ../admin.php");
+    header("Location: admin.php");
   } else {
     echo "Error: " . $conn->error;
   }
