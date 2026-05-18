@@ -7,18 +7,18 @@
     Menu
   </div>
 
-  <a href="index.php?page=dashboard"
-    class="<?= ($page == 'dashboard') ? 'active' : '' ?>">
+  <a href="<?= isset($from_sub) ? '../index.php?page=dashboard' : 'index.php?page=dashboard'; ?>"
+    class="<?= (isset($page) && $page == 'dashboard') ? 'active' : '' ?>">
     <i class="bi bi-speedometer2 me-2"></i>Dashboard
   </a>
 
-  <a href="index.php?page=user"
-    class="<?= ($page == 'user') ? 'active' : '' ?>">
+  <a href="<?= isset($from_sub) ? '../index.php?page=user' : 'index.php?page=user'; ?>"
+    class="<?= (isset($page) && $page == 'user') ? 'active' : '' ?>">
     <i class="bi bi-people me-2"></i>Manajemen User
   </a>
 
-  <a href="index.php?page=berita"
-    class="<?= ($page == 'berita') ? 'active' : '' ?>">
+  <a href="<?= isset($from_sub) ? '../index.php?page=berita' : 'index.php?page=berita'; ?>"
+    class="<?= (isset($page) && $page == 'berita') ? 'active' : '' ?>">
     <i class="bi bi-newspaper me-2"></i>Manajemen Berita
   </a>
 
@@ -33,7 +33,7 @@
     <span class="badge bg-danger ms-1" style="font-size:0.65rem;">Admin</span>
   </div>
 
-  <a href="../login/logout.php" style="color:#e74c3c;">
+  <a href="<?= isset($from_sub) ? '../../login/logout.php' : '../login/logout.php'; ?>" style="color:#e74c3c;">
     <i class="bi bi-box-arrow-left me-2"></i>Logout
   </a>
 </div>

@@ -10,11 +10,11 @@ $stmt->bind_param("i", $_GET['id']);
 $hasil = $stmt->execute();
 
 if ($hasil) {
-  ?>
+?>
   <script language="javascript">
     document.location.href = "../index.php?page=user";
   </script>
-  <?php
+<?php
 } else {
   echo "Gagal hapus data";
 }

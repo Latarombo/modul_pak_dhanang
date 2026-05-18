@@ -7,7 +7,7 @@ $result = $conn_l->query("SELECT * FROM tb_user ORDER BY id DESC");
 
 <div class="d-flex justify-content-between align-items-center mb-4">
   <h4 class="fw-bold mb-0"><i class="bi bi-people me-2 text-primary"></i>Manajemen User</h4>
-  <a href="../user/tambah.php" class="btn btn-primary">
+  <a href="user/tambah.php" class="btn btn-primary">
     <i class="bi bi-plus-lg me-1"></i>Tambah User
   </a>
 </div>
@@ -45,15 +45,15 @@ $result = $conn_l->query("SELECT * FROM tb_user ORDER BY id DESC");
                 </td>
                 <td>
                   <div class="d-flex gap-1">
-                    <a href="../user/detail.php?id=<?= $row['id']; ?>"
+                    <a href="user/detail.php?id=<?= $row['id']; ?>"
                       class="btn btn-sm btn-outline-primary" title="Detail">
                       <i class="bi bi-eye"></i>
                     </a>
-                    <a href="../user/edit.php?id=<?= $row['id']; ?>"
+                    <a href="user/edit.php?id=<?= $row['id']; ?>"
                       class="btn btn-sm btn-outline-warning" title="Edit">
                       <i class="bi bi-pencil"></i>
                     </a>
-                    <a href="../user/delete.php?id=<?= $row['id']; ?>"
+                    <a href="user/delete.php?id=<?= $row['id']; ?>"
                       class="btn btn-sm btn-outline-danger" title="Hapus"
                       onclick="return confirm('Yakin ingin menghapus user ini?')">
                       <i class="bi bi-trash"></i>

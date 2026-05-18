@@ -11,11 +11,11 @@ $hasil = $stmt->execute();
 $conn->query("ALTER TABLE news AUTO_INCREMENT = 1");
 
 if ($hasil) {
-  ?>
+?>
   <script language="javascript">
     document.location.href = "../index.php?page=berita";
   </script>
-  <?php
+<?php
 } else {
   echo "Gagal hapus data";
 }

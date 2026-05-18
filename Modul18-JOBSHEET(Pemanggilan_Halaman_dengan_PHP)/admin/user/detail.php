@@ -1,5 +1,6 @@
 <?php
 $level_akses = "admin";
+$from_sub    = true;
 include "../../login/cek.php";
 
 $host_l = "localhost"; $user_l = "root"; $pass_l = ""; $db_l = "db_latihan";

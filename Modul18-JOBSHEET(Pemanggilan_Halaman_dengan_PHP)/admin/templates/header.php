@@ -80,12 +80,6 @@
     .table th {
       background: #f1f1f1;
     }
-
-    /* Modal image preview */
-    #previewImg, #newPreviewImg {
-      max-height: 200px;
-      object-fit: cover;
-    }
   </style>
 </head>
 

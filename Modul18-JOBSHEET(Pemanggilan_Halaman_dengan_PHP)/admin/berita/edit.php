@@ -1,5 +1,6 @@
 <?php
 $level_akses = "admin";
+$from_sub    = true;
 include "../../login/cek.php";
 include __DIR__ . "/../koneksi.php";
 
