@@ -42,14 +42,6 @@
                 placeholder="Buat password kuat" required>
             </div>
           </div>
-          <div class="mb-4">
-            <label class="form-label fw-semibold small text-uppercase text-muted">Level Akses</label>
-            <div class="form-control bg-light text-muted d-flex align-items-center gap-2">
-              <i class="bi bi-shield-check"></i>
-              <span>Akun baru otomatis sebagai</span>
-              <span class="badge bg-dark ms-1">User</span>
-            </div>
-          </div>
           <button type="submit" name="submit" class="btn btn-danger w-100 fw-semibold">
             <i class="bi bi-person-plus me-2"></i>Daftar Sekarang
           </button>
